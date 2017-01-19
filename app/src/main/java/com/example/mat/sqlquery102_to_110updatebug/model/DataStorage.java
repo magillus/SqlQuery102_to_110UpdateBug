@@ -33,7 +33,9 @@ public class DataStorage {
     }
 
     public void storeGroup(UserGroupEntity userGroup) {
+        // in my usecase we want only store one group
         data.delete(UserGroupEntity.class).get().value();
+
         UserGroupEntity.USER_LIST.getPropertyState().set(userGroup, PropertyState.MODIFIED);
         data.insert(userGroup);
     }
