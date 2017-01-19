@@ -14,7 +14,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Testing upgrade from 1.0.2 to 1.10 on Requery library" />
+        android:text="Testing upgrade from 1.0.2 to 1.1.x on Requery library" />
+    <ToggleButton
+        android:id="@+id/tgl_cipher"
+        android:textOn="SQL CIPHER ENABLED"
+        android:textOff="SQL CIPHER DISABLED"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btn_store_group"
