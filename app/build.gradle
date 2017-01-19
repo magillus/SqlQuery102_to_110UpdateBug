@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+// The me.tatarka.retrolambda builds your java or android project with Retrolambda, which backports
+// lambdas to Java 6 and 7.
+apply plugin: 'me.tatarka.retrolambda'
+
+// The android-apt plugin assists in working with annotation processors in combination with Android
+// Studio. Added for Butterknife.
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "com.example.mat.sqlquery102_to_110updatebug"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+
+    // Logging
+    compile 'com.jakewharton.timber:timber:4.3.1'
+
+    // Butterknife view injection
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    // DB library
+    compile 'io.requery:requery:1.1.1'
+    compile 'io.requery:requery-android:1.1.1' // for android
+    apt 'io.requery:requery-processor:1.1.1'   // use an APT plugin
+    compile 'net.zetetic:android-database-sqlcipher:3.5.4'
+
+    testCompile 'junit:junit:4.12'
+}
