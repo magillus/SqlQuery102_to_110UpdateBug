@@ -17,13 +17,14 @@ public class Generator {
         UserGroupEntity group = new UserGroupEntity();
         group.name = randomString.nextString();
         for (int i=0; i< userCount;i++) {
-            group.userList.add(generateUser());
+            group.userList.add(generateUser(i));
         }
         return group;
     }
 
-    public UserEntity generateUser() {
+    public UserEntity generateUser(int id) {
         UserEntity user = new UserEntity();
+        user.id = id;
         user.name = randomString.nextString();
         return user;
     }

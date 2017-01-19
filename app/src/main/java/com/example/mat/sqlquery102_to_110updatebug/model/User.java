@@ -13,7 +13,7 @@ import io.requery.Persistable;
 @Entity
 public class User implements Persistable {
 
-    @Generated
+    // non generated but assigned ID
     @Key
     public long id;
     public String name;
