@@ -42,9 +42,9 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
 
     // DB library
-    compile 'io.requery:requery:1.1.1'
-    compile 'io.requery:requery-android:1.1.1' // for android
-    apt 'io.requery:requery-processor:1.1.1'   // use an APT plugin
+    compile 'io.requery:requery:1.1.2'
+    compile 'io.requery:requery-android:1.1.2' // for android
+    apt 'io.requery:requery-processor:1.1.2'   // use an APT plugin
     compile 'net.zetetic:android-database-sqlcipher:3.5.4'
 
     testCompile 'junit:junit:4.12'
