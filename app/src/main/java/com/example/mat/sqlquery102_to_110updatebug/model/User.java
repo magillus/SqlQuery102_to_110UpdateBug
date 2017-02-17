@@ -14,7 +14,10 @@ import io.requery.Persistable;
 public class User implements Persistable {
 
     // non generated but assigned ID
+    @Generated
     @Key
+    public long _dbID;
+
     public long id;
     public String name;
 
